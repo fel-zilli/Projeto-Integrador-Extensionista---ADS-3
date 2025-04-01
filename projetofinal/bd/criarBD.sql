@@ -18,24 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `projeto`
+-- Banco de dados: `criarBD`
 --
+
+CREATE DATABASE IF NOT EXISTS `criarBD`;
+USE `criarBD`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `dev`
+-- Estrutura da tabela `clientes`
 --
 
-CREATE TABLE `dev` (
-  `id_dev` int(11) NOT NULL,
-  `NOME` varchar(20) DEFAULT NULL,
-  `SOBRENOME` varchar(20) DEFAULT NULL,
-  `EMAIL` varchar(50) DEFAULT NULL,
-  `DEVWEB` varchar(20) DEFAULT NULL,
-  `SENIORIDADE` varchar(20) DEFAULT NULL,
-  `TECNOLOGIA` varchar(20) DEFAULT NULL,
-  `EXPERIENCIA` varchar(200) DEFAULT NULL
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) DEFAULT NULL,
+  `sobrenome` varchar(100) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `problema` varchar(255) DEFAULT NULL,
+  `descricao` text DEFAULT NULL,
+  `data_cadastro` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -45,21 +47,20 @@ CREATE TABLE `dev` (
 --
 
 --
--- Índices para tabela `dev`
+-- Índices para tabela `clientes`
 --
-ALTER TABLE `dev`
-  ADD PRIMARY KEY (`id_dev`);
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `dev`
+-- AUTO_INCREMENT de tabela `clientes`
 --
-ALTER TABLE `dev`
-  MODIFY `id_dev` int(11) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 COMMIT;
 
